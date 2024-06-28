@@ -41,6 +41,9 @@ class MainFragment : Fragment() {
         binding?.btnSpinner?.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_spinnerFragment)
         }
+        binding?.btnlistview?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_listViewFragment)
+        }
         return binding?.root
     }
 
