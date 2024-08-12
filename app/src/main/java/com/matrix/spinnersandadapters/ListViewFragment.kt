@@ -24,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ListViewFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ListViewFragment : Fragment() {
+class   ListViewFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var binding: FragmentListViewBinding? = null
     var listItems = arrayListOf("Apple", "Banana", "Mangoes", "Burger", "Pizza")

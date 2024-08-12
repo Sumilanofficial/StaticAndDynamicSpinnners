@@ -30,8 +30,15 @@
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/btncred"
-    android:text="Cred"
+    android:id="@+id/btndialog"
+    android:text="Dialog"
+    android:layout_gravity="center_horizontal"
+    />
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnStudentList"
+    android:text="Student List"
     android:layout_gravity="center_horizontal"
     />
 

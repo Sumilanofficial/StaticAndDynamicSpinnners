@@ -1,11 +1,17 @@
 package com.matrix.spinnersandadapters
 
+import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
+import com.matrix.spinnersandadapters.databinding.CustomAlertdialogboxBinding
 import com.matrix.spinnersandadapters.databinding.FragmentMainBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,6 +38,7 @@ class MainFragment : Fragment() {
         }
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,9 +54,35 @@ class MainFragment : Fragment() {
         binding?.btnbaseAdapter?.setOnClickListener {
             findNavController().navigate(R.id.baseAdapterFragment)
         }
-        binding?.btncred?.setOnClickListener {
-            findNavController().navigate(R.id.credFragment)
+        binding?.btndialog?.setOnClickListener{
+            val dialogview=layoutInflater.inflate(R.layout.custom_alertdialogbox,null)
+            val dialog=AlertDialog.Builder(requireContext())
+                .setView(dialogview)
+                .setTitle("Add Detail")
+                .setMessage("Do you want to add thid detail")
+                .setPositiveButton("Yes"){
+                    DialogInterface,which->
+                    var editText=dialogview.findViewById<EditText>(R.id.etalertdialog)
+                    var enteredtxt=editText.text.toString()
+                    Toast.makeText(requireContext(),"You Entered $enteredtxt",Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("No"){
+                    DialogInterface,which->
+                    Toast.makeText(requireContext(),"no",Toast.LENGTH_SHORT).show()
+
+                }
+                .setNeutralButton("Canceled"){
+                        DialogInterface,which->
+                    Toast.makeText(requireContext(),"Canceled",Toast.LENGTH_SHORT).show()
+                }
+            var alertDialog:AlertDialog=dialog.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
         }
+        binding?.btnStudentList?.setOnClickListener{
+            findNavController().navigate(R.layout.fragment_student_list)
+        }
+
         return binding?.root
     }
 

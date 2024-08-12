@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainFragment_to_baseAdapterFragment"
             app:destination="@id/baseAdapterFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
     </fragment>
     <fragment
         android:id="@+id/spinnerFragment"
@@ -35,9 +38,10 @@
         android:name="com.matrix.spinnersandadapters.BaseAdapterFragment"
         android:label="fragment_base_adapter"
         tools:layout="@layout/fragment_base_adapter" />
+
     <fragment
-        android:id="@+id/credFragment"
-        android:name="com.matrix.spinnersandadapters.CredFragment"
-        android:label="fragment_cred"
-        tools:layout="@layout/fragment_cred" />
+        android:id="@+id/studentListFragment"
+        android:name="com.matrix.spinnersandadapters.StudentListFragment"
+        android:label="fragment_student_list"
+        tools:layout="@layout/fragment_student_list" />
 </navigation>
